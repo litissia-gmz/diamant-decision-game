@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projet Jeu Diamant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 20px 40px 20px;
+      color: #333;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.8s ease-in-out;
+      padding-top: 50px; 
+      background-size: cover;
+      background-position: center center; /* Plus précis que 'center' */
+      background-attachment: fixed; /* Empêche le défilement de l'image */
+      background-repeat: no-repeat;
+      background-color: #222; 
+
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin-top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #000;
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+     nav ul {
+      display: inline-flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+    
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      margin: 0 10px;
+      padding: 6px 20px;
+      position: relative;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+     nav a:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background-color: #d42;
+      transition: all 0.3s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: white;
+      background-color: #d42;
+    }
+    nav a.active:before,
+    nav a:hover:before {
+      width: 70%;
+    }
+    
+    nav a.active {
+      color: rgb(242, 239, 239);
+    }
+
+    main {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      margin-top: 30px; 
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      margin-bottom: 40px;
+      min-height: 400px;
+      background-color: rgba(255, 255, 255, 0.92);
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: #fff3cd;
+      padding: 10px;
+      border-left: 5px solid #ffc107;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #c9f0cd;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎲 Le Jeu Diamant</h1>
+  <nav>
+    <a href="#" data-page="presentation" class="active">Présentation</a> |
+    <a href="#" data-page="developpement">Développement de jeu</a> |
+    <a href="#" data-page="groupe">Groupe</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <!-- contenu chargé par JS -->
+</main>
+
+<footer>
+  <p>&copy; 2025 - Projet Jeu Diamant</p>
+</footer>
+
+<script>
+  const navLinks = document.querySelectorAll('nav a');
+  const mainContent = document.getElementById('main-content');
+  const body = document.body;
+
+  const contenuPresentation = `
+    <div class="section">
+      <h2>🔍 Qu'est-ce que c'est ?</h2>
+      <p><strong>Diamant</strong> est un jeu de société familial de prise de risque. Il se joue de <strong>3 à 8 joueurs</strong>, dure environ <strong>30 minutes</strong> et est recommandé dès <strong>8 ans</strong>.</p>
+    </div>
+
+    <div class="section">
+      <h2>🎮 Principe du jeu</h2>
+      <p>Tu explores une grotte à la recherche de diamants. À chaque tour, choisis :</p>
+      <ul>
+        <li><strong>Continuer</strong> à explorer pour gagner plus</li>
+        <li><strong>Revenir</strong> au camp pour sécuriser ton butin</li>
+      </ul>
+      <p class="highlight">⚠️ Deux pièges identiques = tu perds tout ce que tu avais trouvé pendant l’expédition !</p>
+    </div>
+
+    <div class="section">
+      <h2>🎯 Objectif</h2>
+      <p>Être le joueur avec le <strong>plus de diamants</strong> après 5 expéditions.</p>
+    </div>
+  `;
+
+  const contenuDeveloppement = `
+    <div class="section">
+      <h2>Le jeu "Diamant" — Contexte et Développement</h2>
+      <p><strong>Créateur :</strong> Alan R. Moon et Bruno Faidutti</p>
+      <p><strong>Date de création :</strong> Sorti en 2005</p>
+      <p><strong>Éditeur :</strong> Ravensburger</p>
+    </div>
+    <div class="section">
+      <h3>Comment ils ont pu développer "Diamant" ?</h3>
+      <h4>Inspiration et concept</h4>
+      <p>Le jeu s’inspire de thèmes classiques d’exploration et de prise de risque, avec une mécanique simple mais tendue : les joueurs entrent dans une mine à la recherche de trésors (diamants), mais à chaque étape, ils risquent de tomber sur un danger qui peut tout faire perdre.</p>
+      <h4>Mécaniques de jeu</h4>
+      <ul>
+        <li>Le principe central est le "push your luck" (prends un risque, mais arrête-toi avant que ça tourne mal).</li>
+        <li>Ils ont combiné des cartes tirées aléatoirement (diamants ou dangers) avec une prise de décision tactique (quand partir).</li>
+        <li>Le jeu est facile à apprendre, rapide à jouer, avec une forte interaction entre joueurs.</li>
+      </ul>
+      <h4>Prototypage</h4>
+      <p>Comme pour la plupart des jeux, les auteurs ont sûrement commencé par un prototype papier avec des cartes et jetons, qu’ils ont testé plusieurs fois avec des joueurs pour ajuster les règles, la fréquence des dangers, la distribution des diamants, etc.</p>
+      <h4>Tests et ajustements</h4>
+      <p>Le jeu a subi plusieurs itérations basées sur les retours pour s’assurer d’un bon équilibre entre tension et plaisir.</p>
+      <h4>Graphisme et production</h4>
+      <p>Une fois la mécanique finalisée, un illustrateur a créé des visuels attrayants pour renforcer le thème d’exploration d’une mine. L’éditeur s’est chargé de la fabrication, distribution, et promotion.</p>
+    </div>
+  `;
+
+  const contenuGroupe = `
+    <div class="section">
+      <h2>👥 Les Membres du Groupe</h2>
+      <ul>
+        <li>Sonia Melaba</li>
+        <li>Litissia Goumeziane</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>💼 Notre Travail</h2>
+      <p>Nous sommes étudiantes en Licence 1 Informatique. Ce projet nous a permis de :</p>
+      <ul>
+        <li>Apprendre le HTML/CSS et un peu de JavaScript</li>
+        <li>Travailler en groupe efficacement</li>
+        <li>Créer une mini-application web dynamique</li>
+      </ul>
+    </div>
+  `;
+
+  // Change le background selon la page (tu peux modifier les URLs ou supprimer cette fonction)
+  function setBackground(page) {
+    if (page === 'presentation') {
+      body.style.backgroundImage = "url('https://www.roterdorn.de/wp-content/uploads/2017/05/Diamant.jpg')";
+    } else if (page === 'developpement') {
+      body.style.backgroundImage = "url('https://www.roterdorn.de/wp-content/uploads/2017/05/Diamant.jpg')";
+    } else if (page === 'groupe') {
+      body.style.backgroundImage = "url('https://www.roterdorn.de/wp-content/uploads/2017/05/Diamant.jpg')";
+    }
+  }
+
+  function afficherContenu(page) {
+    if (page === 'presentation') {
+      mainContent.innerHTML = contenuPresentation;
+    } else if (page === 'developpement') {
+      mainContent.innerHTML = contenuDeveloppement;
+    } else if (page === 'groupe') {
+      mainContent.innerHTML = contenuGroupe;
+    }
+    setBackground(page);
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const page = link.getAttribute('data-page');
+      afficherContenu(page);
+    });
+  });
+
+  // Affichage initial
+  afficherContenu('presentation');
+</script>
+
+</body>
+</html>
