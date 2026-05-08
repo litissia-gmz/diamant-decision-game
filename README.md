@@ -1,6 +1,8 @@
 # Simulation d'Environnement Décisionnel - Jeu Diamant
 
 Ce projet, réalisé dans le cadre de la Licence Informatique à l'Université d'Angers, consiste en la modélisation complète d'un jeu de société, le développement d'agents autonomes dotés de capacités décisionnelles, ainsi qu'une présentation interactive via un site web.
+**[Voir le site de présentation interactif en direct ici](https://litissia-gmz.github.io/diamant-decision-game/)**
+
 
 ## Présentation du projet
 L'objectif était de concevoir un moteur de jeu robuste en **Python** capable de gérer des cycles de manches stochastiques (aléatoires) et d'y intégrer une intelligence artificielle heuristique. En complément, un **site web vitrine** a été développé en **HTML/CSS** pour présenter l'univers du jeu, ses règles et son fonctionnement de manière ergonomique.
