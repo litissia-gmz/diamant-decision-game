@@ -24,4 +24,5 @@ Le projet inclut une interface de présentation réalisée en **HTML5** et **CSS
 - **Développement Web :** Structure sémantique HTML, mise en forme et responsive design en CSS.
 - **Structures de données :** Utilisation avancée de dictionnaires, listes et sets.
 - **Architecture logicielle :** Découplage entre le moteur de jeu (backend) et l'interface de présentation (frontend).
-*Projet réalisé par Litissia - Étudiante en L1 Informatique à Angers.*
+- 
+Projet réalisé en binôme par Litissia - Étudiante en L1 Informatique
